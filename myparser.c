@@ -133,7 +133,7 @@ void parser(char *header[CHAR_MAX],FILE **returnfile,char *buf)
         strcpy(header,tmpheader);
 		
 		//log
-        strcat(logresponse,"200 OK opend FILE ");
+        strcat(logresponse,"200 OK opened FILE ");
         strcat(logresponse,filepath);
         sendLog(logresponse);
     }
