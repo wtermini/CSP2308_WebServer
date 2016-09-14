@@ -79,7 +79,9 @@ void parser(char *header[CHAR_MAX],FILE **returnfile,char *buf)
 		 if((checkFile(filepath)==404))
 		 {
 			 strcpy(header,response_404); 
+             printf(response_404);
 			 strcat(logresponse,"404 ERROR can not find FILE ");
+
 		 }
 		 else
 		 {
@@ -88,6 +90,7 @@ void parser(char *header[CHAR_MAX],FILE **returnfile,char *buf)
 		 }
         strcat(logresponse,filepath);
         sendLog(logresponse);
+         *returnfile=NULL;
 		 return;
 		
     }

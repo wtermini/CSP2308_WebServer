@@ -37,7 +37,7 @@ pid_t g_mainpid, g_deathklock;
 int   srvRun;
 void     HUPhandler(int);
 void     killhandler(int);
-void  	  HUPhandler(int sig)
+void  	 HUPhandler(int sig)
 {
     //Reload The Config and restart the server
     g_hupflag=1;
@@ -295,21 +295,23 @@ return 0;
 int writeSock(char header[CHAR_MAX],FILE *requestfp,int *clientsockfd)
 {
     char buff[4096];
-
     long sent =0;
     int headersend = 0;
 	int w = 1;
 	int r = 1; 
 	int len ;
 	
-	if(requestfp!=NULL)
-	{
+
+    if(requestfp!=NULL)
+    {
+    fflush(stdout);
 	//Get file size
 	fseek(requestfp, 0, SEEK_END);
 	len = (unsigned long)ftell(requestfp);
 	rewind(requestfp);
-	}
+    }
 	
+
     while(sent!=1)
     {
         if (headersend == 0)
@@ -339,7 +341,7 @@ int writeSock(char header[CHAR_MAX],FILE *requestfp,int *clientsockfd)
 					
 				 if(len<0)
 				 {
-					// w = (write(*clientsockfd,"/n",sizeof("/n")));
+					 w = (write(*clientsockfd,"/n",sizeof("/n")));
 					 break;
 				 }
 					
