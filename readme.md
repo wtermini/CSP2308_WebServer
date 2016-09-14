@@ -1,6 +1,8 @@
 # Web Server README for CSP2308 Unix and C #
 [![Build Status](https://ci.termini.me/buildStatus/icon?job=CSP2308_WebServer)](https://ci.termini.me/job/CSP2308_WebServer/)
 
+This is a web server I wrote as part of my university degree, I make changes once and a while for learning purposes 
+
 ## Building:
   To build mywebserver run make
   To make and run right away run make run
